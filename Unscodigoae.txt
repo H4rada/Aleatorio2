@@ -1,0 +1,609 @@
+	Mudança de fonte, negrito e italiaco
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace _07BARRA3BARRA19
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            FontFamily fm = new FontFamily("Comic Sans MS");
+            label1.Font = new Font(fm, 12);
+            FontStyle fs = Font.Style;
+            label1.Font = new Font(label1.Font, FontStyle.Bold);//muda a fonte 
+            label1.Text = textBox1.Text;
+            label2.Text = textBox1.Text;
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        //caso estiver checado va mudar a fonte para italico
+        {
+            label2.Font = new Font(label2.Font.Name, label2.Font.Size, label2.Font.Style ^ FontStyle.Italic);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        //caso esteja checado vai mudar a fonte para negrito 
+        {
+            label2.Font = new Font(label2.Font.Name, label2.Font.Size, label2.Font.Style ^ FontStyle.Bold);
+        }
+    }
+
+
+	
+
+
+
+
+	Calcularoda 
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Calculadora
+{
+    public partial class Form1 : Form
+    {
+        int op = 0;
+        double r = 0, n1 = 0;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "1";
+
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "2";
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "3";
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "4";
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "5";
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "6";
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "7";
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "8";
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "9";
+        }
+        private void button16_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "0";
+            
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            n1 = double.Parse(textBox1.Text);//transforma o que tem no textbox de 
+            //string para uma variavel double
+            textBox1.Clear();//limpa o textbox
+            op = 1; //uma variavel auxiliar para a escolha de operaçao
+           
+        }
+
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            n1= double.Parse(textBox1.Text);//transforma o que tem no textbox de 
+            //string para uma variavel double
+            textBox1.Clear(); //limpa o textbox
+             op = 2; //uma variavel auxiliar para a escolha de operaçao
+           
+            
+        }
+        private void button14_Click(object sender, EventArgs e)
+        {
+            n1 = double.Parse(textBox1.Text);//transforma o que tem no textbox de 
+            //string para uma variavel double
+            textBox1.Clear();//limpa o textbox
+             op = 3;//uma variavel auxiliar para a escolha de operaçao
+            
+        }
+        private void button15_Click(object sender, EventArgs e)
+        {
+            n1 = double.Parse(textBox1.Text);//transforma o que tem no textbox de 
+            //string para uma variavel double
+            textBox1.Clear();//limpa o textbox
+             op = 4; //uma variavel auxiliar para a escolha de operaçao
+            
+
+        }
+        private void button17_Click(object sender, EventArgs e)
+        { 
+          if (!(textBox1.Text.Contains(",")))//verifica se á mais de uma virgula se ja 
+          //houver uma nao permitira que seja colocada outra
+                textBox1.Text = textBox1.Text + ",";
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();//limpa tuto
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            
+            if (op == 1)//SOMA
+                r = n1 + double.Parse(textBox1.Text);
+            else if (op == 2)//SUB
+                r = n1 - double.Parse(textBox1.Text);
+            else if (op == 3)//MULT
+                r = n1 * double.Parse(textBox1.Text);
+            else if (op == 4)//DIVED
+            {
+                if (double.Parse(textBox1.Text) != 0)// verifica se for zero e nao fara a se
+                // for zero pq N EXISTE
+                    r = n1 / double.Parse(textBox1.Text);
+            }
+            
+            textBox1.Text = r.ToString();//transforma a variavel de resposta 
+            //para string colocando ela no textbox
+       
+
+
+
+
+        }
+    }
+
+
+
+}
+	Estrutura de repetição
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Calculadora
+{
+    public partial class Form1 : Form
+    {
+        int op = 0;
+        double r = 0, n1 = 0;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "1";
+
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "2";
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "3";
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "4";
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "5";
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "6";
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "7";
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "8";
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "9";
+        }
+        private void button16_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "0";
+            
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            n1 = double.Parse(textBox1.Text);//transforma o que tem no textbox de 
+            //string para uma variavel double
+            textBox1.Clear();//limpa o textbox
+            op = 1; //uma variavel auxiliar para a escolha de operaçao
+           
+        }
+
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            n1= double.Parse(textBox1.Text);//transforma o que tem no textbox de 
+            //string para uma variavel double
+            textBox1.Clear(); //limpa o textbox
+             op = 2; //uma variavel auxiliar para a escolha de operaçao
+           
+            
+        }
+        private void button14_Click(object sender, EventArgs e)
+        {
+            n1 = double.Parse(textBox1.Text);//transforma o que tem no textbox de 
+            //string para uma variavel double
+            textBox1.Clear();//limpa o textbox
+             op = 3;//uma variavel auxiliar para a escolha de operaçao
+            
+        }
+        private void button15_Click(object sender, EventArgs e)
+        {
+            n1 = double.Parse(textBox1.Text);//transforma o que tem no textbox de 
+            //string para uma variavel double
+            textBox1.Clear();//limpa o textbox
+             op = 4; //uma variavel auxiliar para a escolha de operaçao
+            
+
+        }
+        private void button17_Click(object sender, EventArgs e)
+        { 
+          if (!(textBox1.Text.Contains(",")))//verifica se á mais de uma virgula se ja 
+          //houver uma nao permitira que seja colocada outra
+                textBox1.Text = textBox1.Text + ",";
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();//limpa tuto
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            
+            if (op == 1)//SOMA
+                r = n1 + double.Parse(textBox1.Text);
+            else if (op == 2)//SUB
+                r = n1 - double.Parse(textBox1.Text);
+            else if (op == 3)//MULT
+                r = n1 * double.Parse(textBox1.Text);
+            else if (op == 4)//DIVED
+            {
+                if (double.Parse(textBox1.Text) != 0)// verifica se for zero e nao fara a se
+                // for zero pq N EXISTE
+                    r = n1 / double.Parse(textBox1.Text);
+            }
+            
+            textBox1.Text = r.ToString();//transforma a variavel de resposta 
+            //para string colocando ela no textbox
+       
+
+
+
+
+        }
+    }
+}
+
+
+}	Tabuada using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Calculadora
+{
+    public partial class Form1 : Form
+    {
+        int op = 0;
+        double r = 0, n1 = 0;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "1";
+
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "2";
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "3";
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "4";
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "5";
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "6";
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "7";
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "8";
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "9";
+        }
+        private void button16_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "0";
+            
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            n1 = double.Parse(textBox1.Text);//transforma o que tem no textbox de 
+            //string para uma variavel double
+            textBox1.Clear();//limpa o textbox
+            op = 1; //uma variavel auxiliar para a escolha de operaçao
+           
+        }
+
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            n1= double.Parse(textBox1.Text);//transforma o que tem no textbox de 
+            //string para uma variavel double
+            textBox1.Clear(); //limpa o textbox
+             op = 2; //uma variavel auxiliar para a escolha de operaçao
+           
+            
+        }
+        private void button14_Click(object sender, EventArgs e)
+        {
+            n1 = double.Parse(textBox1.Text);//transforma o que tem no textbox de 
+            //string para uma variavel double
+            textBox1.Clear();//limpa o textbox
+             op = 3;//uma variavel auxiliar para a escolha de operaçao
+            
+        }
+        private void button15_Click(object sender, EventArgs e)
+        {
+            n1 = double.Parse(textBox1.Text);//transforma o que tem no textbox de 
+            //string para uma variavel double
+            textBox1.Clear();//limpa o textbox
+             op = 4; //uma variavel auxiliar para a escolha de operaçao
+            
+
+        }
+        private void button17_Click(object sender, EventArgs e)
+        { 
+          if (!(textBox1.Text.Contains(",")))//verifica se á mais de uma virgula se ja 
+          //houver uma nao permitira que seja colocada outra
+                textBox1.Text = textBox1.Text + ",";
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();//limpa tuto
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            
+            if (op == 1)//SOMA
+                r = n1 + double.Parse(textBox1.Text);
+            else if (op == 2)//SUB
+                r = n1 - double.Parse(textBox1.Text);
+            else if (op == 3)//MULT
+                r = n1 * double.Parse(textBox1.Text);
+            else if (op == 4)//DIVED
+            {
+                if (double.Parse(textBox1.Text) != 0)// verifica se for zero e nao fara a se
+                // for zero pq N EXISTE
+                    r = n1 / double.Parse(textBox1.Text);
+            }
+            
+            textBox1.Text = r.ToString();//transforma a variavel de resposta 
+            //para string colocando ela no textbox
+       
+
+
+
+
+        }
+    }
+
+
+	Paint
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace EXEMPLO3
+{
+    public partial class Form1 : Form
+    {
+        bool devePintar = false;
+        Color cor;// cria variavel de cor tipo cor..
+        Graphics grafico;
+        int tam = 10;
+        public Form1()
+        {
+            InitializeComponent();
+            cor = Color.Black;
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)//mouse clicado 
+        {
+            devePintar = true;
+        }
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)//mouse nao clicada
+        {
+            devePintar = false;
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (devePintar)
+            {
+                grafico = CreateGraphics();
+                grafico.FillEllipse(new SolidBrush(cor), e.X, e.Y, tam, tam);
+            }
+        }
+
+       // private void Form1_Load(object sender, EventArgs e)
+        //{
+
+        //}
+
+       // private void groupBox1_Enter(object sender, EventArgs e)
+        //{
+
+        //}
+
+        private void panel3_MouseClick(object sender, MouseEventArgs e)
+        {
+            cor =Color.Red;
+                tam = 10;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_MouseClick(object sender, MouseEventArgs e)
+        {
+            cor = Color.Fuchsia;
+                 tam = 10;
+        }
+
+        private void panel6_MouseClick(object sender, MouseEventArgs e)
+        {
+            cor = Color.Aqua;
+            tam = 10;
+        }
+
+        private void panel5_MouseClick(object sender, MouseEventArgs e)
+        {
+            cor = Color.Yellow;
+            tam = 10;
+        }
+
+        private void panel4_MouseClick(object sender, MouseEventArgs e)
+        {
+            cor = Color.Lime;
+            tam = 10;
+        }
+
+        private void panel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            cor = Color.Blue;
+            tam = 10;
+        }
+
+        private void panel7_MouseClick(object sender, MouseEventArgs e)
+        {
+            tam = 50;
+            cor = Color.White;
+        }
+    }
+}
+
+}
+
